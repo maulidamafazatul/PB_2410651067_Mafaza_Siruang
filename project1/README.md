@@ -22,7 +22,7 @@ flutter pub get
 flutter run -d chrome
 
 ## Catatan Kendala
-dimana apk bisa running di android
+-
 
 ## Catatan Penggunaan AI
 Tool AI yang Digunakan [Gemini]
@@ -35,25 +35,8 @@ Bagian yang Dibantu [struktur flutter]
 
 Saran AI yang Digunakan [beberapa struktur dari ppt berbeda dengan isi new folder create yg kita buat]
 
-Modifikasi atau Verifikasi Mahasiswa []
+Modifikasi atau Verifikasi Mahasiswa [memahami perbedaan tersebut]
 
-Bagian yang Dipahami
+Bagian yang Dipahami[build ada ketika project sudah di running]
 
-Status Akhir
-
-[contoh: ChatGPT, Gemini, Copilot, lainnya]
-
-[Explainer / Debugging Helper / Reviewer]
-
-[contoh: memahami fungsi Scaffold, membaca error layout, menjelaskan
-perbedaan Stateless Widget dan StatefulWidget]
-
-[contoh: main.dart, README.md, error terminal]
-
-[ringkasan saran AI yang benar-benar dipakai]
-
-[apa yang dicek ulang, diubah, atau ditolak]
-
-[jelaskan bagian kode atau konsep yang sudah dipahami]
-
-[berhasil/belum berhasil/perlu App Clinic]
+Status Akhir [berhasil]
