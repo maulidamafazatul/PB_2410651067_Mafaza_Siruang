@@ -24,3 +24,18 @@ Perubahan:
 Bukti:
 File/foto wireframe tersedia.
 Commit Git tersedia.
+
+
+## v0.3 - Data Module
+Tanggal: [16 November 2026]
+
+### Added
+- Model `Peminjaman` dan data mock di memori
+- Screen Status Pengajuan dengan Create, Read, Update, Delete, dan dialog konfirmasi hapus
+- Empty state dan SnackBar
+- Pencarian dan pilihan hari di Jadwal
+- Widget `PageHeader` yang dipakai bersama
+
+### Changed
+- Form pengajuan memakai validasi
+- Tampilan disesuaikan dengan desain Figma

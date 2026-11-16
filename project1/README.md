@@ -71,3 +71,34 @@ flutter run -d chrome
 
   ## Catatan Penggunaan AI
   AI digunakan sebagai mitra berpikir (thought partner) untuk brainstorming alur UX, susunan statistik dashboard, serta review keterbacaan layout.
+
+  # SIRUANG (Sistem Informasi Ruangan) Gedung B
+
+Aplikasi Flutter untuk memantau jadwal ruang kelas Gedung B Universitas Muhammadiyah Jember, mengecek ruang kosong, dan mengajukan peminjaman ruangan. Pengguna sasaran: mahasiswa dan pengurus Ormawa.
+
+- Nama: Mafaza | NIM: 2410651067 | Kelas: [isi]
+- Mata kuliah: Pemrograman Bergerak (MJU.TIK.025)
+- Versi: **v0.3 - Data Module**
+
+## Fitur
+
+- Navigasi 4 tab: Beranda, Jadwal, Kosong, Pengajuan
+- Jadwal ruangan dengan pencarian dan pilihan hari
+- Form pengajuan dengan validasi (BAB 6)
+- CRUD pengajuan peminjaman, empty state, dan SnackBar (BAB 7)
+
+## Data Module
+
+**Model `Peminjaman`:** id, kegiatan, ruangan, tanggal, jamMulai, jamSelesai, status, alasan.
+
+**Sumber data:** mock data di memori (`lib/data/peminjaman_data.dart`). Data tidak permanen dan kembali ke data awal saat aplikasi dimuat ulang. Semua data fiktif.
+
+**Alur CRUD:** Create lewat tombol Ajukan dan form, Read lewat `ListView.builder`, Update lewat menu titik tiga lalu Ubah, Delete lewat menu titik tiga lalu Hapus dengan dialog konfirmasi. Daftar kosong menampilkan empty state.
+
+**Validasi form:** nama kegiatan wajib dan minimal 3 karakter; ruangan, tanggal, dan jam wajib diisi; jam selesai harus setelah jam mulai.
+
+## Catatan Keamanan dan Keterbatasan
+
+- Data fiktif, tanpa data pribadi asli, tanpa API key atau credential.
+- Login masih simulasi. Jadwal dan statistik Beranda masih data tetap.
+- Unggah KTM masih placeholder.
