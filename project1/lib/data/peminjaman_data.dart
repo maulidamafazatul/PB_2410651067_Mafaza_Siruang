@@ -7,6 +7,7 @@ class PeminjamanData {
     Peminjaman(
       id: 1,
       kegiatan: 'Rapat Anggota BEM',
+      kategoriKegiatan: 'rapat',
       ruangan: 'B.114',
       tanggal: DateTime(2026, 11, 9),
       jamMulai: '07:00',
@@ -16,6 +17,7 @@ class PeminjamanData {
     Peminjaman(
       id: 2,
       kegiatan: 'Kongres',
+      kategoriKegiatan: 'rapat',
       ruangan: 'B.117',
       tanggal: DateTime(2026, 11, 10),
       jamMulai: '07:00',
@@ -24,7 +26,8 @@ class PeminjamanData {
     ),
     Peminjaman(
       id: 3,
-      kegiatan: 'Gladi Kongres',
+      kegiatan: 'seminar chat GPT',
+      kategoriKegiatan: 'seminar',
       ruangan: 'B.116',
       tanggal: DateTime(2026, 11, 9),
       jamMulai: '12:00',
@@ -44,6 +47,13 @@ class PeminjamanData {
     'B.116',
     'B.117',
   ];
+  // Pilihan Kategori kegiatan (Rapat, Seminar dan KelasPengganti )
+  static const List<String> kategoriKegiatan = [
+    'Rapat',
+    'Seminar',
+    'Kelas Pengganti',
+  ];
+
 
   // Create atau Update: kalau id sudah ada, data diganti; kalau belum, ditambah.
   static void simpan(Peminjaman p) {

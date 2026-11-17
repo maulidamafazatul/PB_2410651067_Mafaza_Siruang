@@ -1,8 +1,11 @@
 // Model data BAB 7: satu objek = satu pengajuan peminjaman ruangan.
 // Field yang bisa diubah (Update) tidak memakai final.
+import 'dart:nativewrappers/_internal/vm/lib/ffi_patch.dart';
+
 class Peminjaman {
   final int id;
   String kegiatan;
+  String kategoriKegiatan;
   String ruangan;
   DateTime tanggal;
   String jamMulai; // format HH:mm
@@ -13,6 +16,7 @@ class Peminjaman {
   Peminjaman({
     required this.id,
     required this.kegiatan,
+    required this.kategoriKegiatan,
     required this.ruangan,
     required this.tanggal,
     required this.jamMulai,

@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/ffi_patch.dart';
+
 import 'package:flutter/material.dart';
 
 import '../data/peminjaman_data.dart';
@@ -24,6 +26,7 @@ class _FormPengajuanScreenState extends State<FormPengajuanScreen> {
   final _selesaiController = TextEditingController();
 
   String? _ruangan;
+  String? _kategoriKegiatan;
   DateTime? _tanggal;
   TimeOfDay? _mulai;
   TimeOfDay? _selesai;
@@ -37,6 +40,7 @@ class _FormPengajuanScreenState extends State<FormPengajuanScreen> {
     if (e != null) {
       _kegiatanController.text = e.kegiatan;
       _ruangan = e.ruangan;
+      _kategoriKegiatan = e.kategoriKegiatan;
       _tanggal = e.tanggal;
       _tanggalController.text = e.tanggalText;
       _mulai = _parseJam(e.jamMulai);
@@ -106,6 +110,7 @@ class _FormPengajuanScreenState extends State<FormPengajuanScreen> {
     final hasil = Peminjaman(
       id: widget.existing?.id ?? PeminjamanData.nextId++,
       kegiatan: _kegiatanController.text.trim(),
+      kategoriKegiatan:_kategoriKegiatan!,
       ruangan: _ruangan!,
       tanggal: _tanggal!,
       jamMulai: _formatJam(_mulai!),
@@ -140,6 +145,21 @@ class _FormPengajuanScreenState extends State<FormPengajuanScreen> {
                 if (text.length < 3) return 'Nama kegiatan minimal 3 karakter';
                 return null;
               },
+            ),
+             const SizedBox(height: 12),
+            DropdownButtonFormField<String>(
+              value: _kategoriKegiatan,
+              decoration: const InputDecoration(
+                labelText: 'Pilih kategori kegiatan',
+                border: OutlineInputBorder(),
+              ),
+              items: [
+                for (final r in PeminjamanData.kategoriKegiatan)
+                  DropdownMenuItem(value: r, child: Text(r)),
+              ],
+              onChanged: (value) => setState(() => _ruangan = value),
+              validator: (value) =>
+                  value == null ? 'kategori wajib dipilih' : null,
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<String>(
